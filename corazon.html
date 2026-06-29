@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para ti ❤️</title>
+
+<style>
+body{
+    margin:0;
+    background:#111;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+}
+
+#heart{
+    font-family:Consolas, monospace;
+    color:#ff3366;
+    font-size:10px;
+    line-height:10px;
+    white-space:pre;
+    text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<pre id="heart"></pre>
+
+<script>
+
+const texto = "❤️";
+let salida = "";
+
+for(let y = 1.5; y > -1.5; y -= 0.06){
+
+    for(let x = -1.5; x < 1.5; x += 0.03){
+
+        let f = Math.pow(x*x + y*y - 1,3) - x*x*y*y*y;
+
+        if(f <= 0){
+            salida += texto;
+        }else{
+            salida += " ";
+        }
+
+    }
+
+    salida += "\n";
+}
+
+document.getElementById("heart").textContent = salida;
+
+</script>
+
+</body>
+</html>
